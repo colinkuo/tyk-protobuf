@@ -17,6 +17,7 @@
 		<fmt-maven-plugin.version>2.4.0</fmt-maven-plugin.version>
 		<os-maven-plugin.version>1.4.0.Final</os-maven-plugin.version>
 		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+		<maven-packagecloud-wagon.version>0.0.6</maven-packagecloud-wagon.version>
 
 		<protobuf-maven-plugin.version>0.5.1</protobuf-maven-plugin.version>
 		<protoc.version>3.5.1</protoc.version>
@@ -36,6 +37,11 @@
 				<groupId>kr.motd.maven</groupId>
 				<artifactId>os-maven-plugin</artifactId>
 				<version>${os-maven-plugin.version}</version>
+			</extension>
+			<extension>
+				<groupId>io.packagecloud.maven.wagon</groupId>
+				<artifactId>maven-packagecloud-wagon</artifactId>
+				<version>${maven-packagecloud-wagon.version}</version>
 			</extension>
 		</extensions>
 		<plugins>
@@ -188,7 +194,18 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>packagecloud-colinkuo</id>
+			<url>packagecloud+https://packagecloud.io/colinkuo/repo</url>
+		</repository>
+		<snapshotRepository>
+			<id>packagecloud-colinkuo</id>
+			<url>packagecloud+https://packagecloud.io/colinkuo/repo</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
