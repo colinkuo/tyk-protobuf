@@ -7,6 +7,6 @@ services:
 
 deploy:
   provider: script
-  script: "mvn clean deploy -s .travis.settings.xml"
+  script: "mvn deploy -s .travis.settings.xml"
   on:
     all_branches: true
