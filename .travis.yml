@@ -7,8 +7,6 @@ services:
 
 deploy:
   provider: script
-  script: "cd java && mvn deploy -s ../.travis.settings.xml"
-  skip_cleanup: true
+  script: "mvn clean deploy -s .travis.settings.xml"
   on:
     all_branches: true
-    tags: true
